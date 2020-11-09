@@ -1,0 +1,15 @@
+@EndUserText.label: 'Access control for ZI_RAP_TRAV_KC'
+@MappingRole: true
+define role ZI_RAP_TRAV_KC {
+    grant
+        select
+            on
+                ZI_RAP_TRAV_KC
+                    where
+                        CurrencyCode = 'EUR'
+                        and 
+                         ( TravelStatus ) = aspect pfcg_auth( ZOSTAT_KC, ZOSTAT_KC, ACTVT = '03')
+                         or 
+                         true;
+                        
+}
