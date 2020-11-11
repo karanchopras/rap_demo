@@ -4,7 +4,7 @@ implementation in class zbp_i_rap_trav_kc unique;
 define behavior for ZI_RAP_TRAV_KC alias Travel
 persistent table zrap_travel_kc
 lock master
-//authorization master ( instance )
+authorization master ( instance )
 etag master LastChangedAt
 {
   create;
@@ -53,7 +53,7 @@ define behavior for ZI_RAP_Book_KC alias Booking
 implementation in class zbp_i_rap_booking_kc unique
 persistent table zrap_booking_kc
 lock dependent by _Travel
-//authorization dependent by <association>
+authorization dependent by _Travel
 etag master LocalLastChangedAt
 {
   association _Travel;
